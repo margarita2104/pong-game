@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pong game 🏓</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="./js/confetti.min.js"></script>
+  <script defer src="./js/index.js"></script>
+</head>
+
+<body class="flex">
+  <h1 class="title">Pong game 🏓</h1>
+
+  <div class="btn-wrapper">
+    <button class="new_game">New game</button>
+    <button id="celebrate">Celebrate victory</button>
+  </div>
+
+  <div class="score neonText flex">
+    <p class="score_left">
+      0
+    </p>
+    <p class="score_right">
+      0
+    </p>
+  </div>
+
+  <div class="canvas-wrapper flex">
+    <div class="controls controls_left">
+      <p class="controls_descr flex">
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 20L12 4M12 4L18 10M12 4L6 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        W
+      </p>
+      <p class="controls_descr flex">
+        S
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C12.4142 3.25 12.75 3.58579 12.75 4L12.75 18.1893L17.4697 13.4697C17.7626 13.1768 18.2374 13.1768 18.5303 13.4697C18.8232 13.7626 18.8232 14.2374 18.5303 14.5303L12.5303 20.5303C12.3897 20.671 12.1989 20.75 12 20.75C11.8011 20.75 11.6103 20.671 11.4697 20.5303L5.46967 14.5303C5.17678 14.2374 5.17678 13.7626 5.46967 13.4697C5.76256 13.1768 6.23744 13.1768 6.53033 13.4697L11.25 18.1893L11.25 4C11.25 3.58579 11.5858 3.25 12 3.25Z" fill="#1C274C" />
+        </svg>
+      </p>
+    </div>
+    <canvas class="canvas"></canvas>
+    <div class="controls controls_right">
+      <p class="controls_descr flex">
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 20L12 4M12 4L18 10M12 4L6 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        O
+      </p>
+      <p class="controls_descr flex">
+        L
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C12.4142 3.25 12.75 3.58579 12.75 4L12.75 18.1893L17.4697 13.4697C17.7626 13.1768 18.2374 13.1768 18.5303 13.4697C18.8232 13.7626 18.8232 14.2374 18.5303 14.5303L12.5303 20.5303C12.3897 20.671 12.1989 20.75 12 20.75C11.8011 20.75 11.6103 20.671 11.4697 20.5303L5.46967 14.5303C5.17678 14.2374 5.17678 13.7626 5.46967 13.4697C5.76256 13.1768 6.23744 13.1768 6.53033 13.4697L11.25 18.1893L11.25 4C11.25 3.58579 11.5858 3.25 12 3.25Z" fill="#1C274C" />
+        </svg>
+      </p>
+    </div>
+  </div>
+
+</body>
+
+</html>

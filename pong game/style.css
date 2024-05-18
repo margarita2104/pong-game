@@ -1,0 +1,123 @@
+:root {
+  --background-color: 'white';
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+  mix-blend-mode: difference;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'digital-7';
+  src: url('./fonts/digital-7.regular.ttf');
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.btn-wrapper {
+  margin-bottom: 3%;
+}
+
+.new_game {
+  margin-right: 15px;
+}
+
+.new_game, #celebrate {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.new_game:after, #celebrate:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.new_game:hover:after, #celebrate:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+.score {
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: digital-7;
+  font-size: 50px;
+  height: fit-content;
+  width: 10%;
+  margin-top: 2%;
+  margin-bottom: -5%;
+  z-index: 10;
+}
+
+.neonText {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+
+.score_left, .score_right {
+  margin: 0;
+}
+
+.canvas-wrapper {
+  flex-direction: row;
+}
+
+.controls_descr {
+  padding: 7px 5px;
+  border-radius: 15px;
+  background-color: #D3D3D3;
+}
+
+.controls_left {
+  margin-right: 25px;
+}
+
+.controls_right {
+  margin-left: 25px;
+}
+
+.canvas {
+  height: 450px;
+  width: 900px;
+  border: 2px solid white;
+  background-color: #0661b2
+}

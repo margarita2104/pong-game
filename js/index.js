@@ -1,11 +1,25 @@
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext("2d");
-const canvasWidth = 300;
-const canvasHeight = 150;
+
 const scoreLeft = document.querySelector(".score_left");
 const scoreRight = document.querySelector(".score_right");
 const startButton = document.querySelector(".new_game");
 
+const upButtonR = document.querySelector(
+  ".controls_left .controls_descr:nth-child(1)"
+);
+const downButtonR = document.querySelector(
+  ".controls_left .controls_descr:nth-child(2)"
+);
+const upButtonL = document.querySelector(
+  ".controls_right .controls_descr:nth-child(1)"
+);
+const downButtonL = document.querySelector(
+  ".controls_right .controls_descr:nth-child(2)"
+);
+
+const canvasWidth = 300;
+const canvasHeight = 150;
 const radius = 5;
 let ballPosX = 50;
 let ballPosY = 50;
@@ -57,11 +71,39 @@ const renderPaddleL = () => {
 
 const changePaddlePosYR = (goingUp) => {
   goingUp ? (paddlePosYR -= paddleSpeed) : (paddlePosYR += paddleSpeed);
+  paddlePosYR = Math.max(0, Math.min(canvasHeight - 40, paddlePosYR));
 };
 
 const changePaddlePosYL = (goingUp) => {
   goingUp ? (paddlePosYL -= paddleSpeed) : (paddlePosYL += paddleSpeed);
+  paddlePosYL = Math.max(0, Math.min(canvasHeight - 40, paddlePosYL));
 };
+
+// moving paddles with touch
+
+const handleTouchStart = (event, up, paddleSide) => {
+  event.preventDefault();
+  if (paddleSide === "left") {
+    changePaddlePosYL(up);
+  } else {
+    changePaddlePosYR(up);
+  }
+};
+
+upButtonL.addEventListener("touchstart", (event) =>
+  handleTouchStart(event, true, "left")
+);
+downButtonL.addEventListener("touchstart", (event) =>
+  handleTouchStart(event, false, "left")
+);
+upButtonR.addEventListener("touchstart", (event) =>
+  handleTouchStart(event, true, "right")
+);
+downButtonR.addEventListener("touchstart", (event) =>
+  handleTouchStart(event, false, "right")
+);
+
+// moving paddles with keys
 
 const handleKeyDownR = (event) => {
   const key = event.key;
@@ -94,12 +136,15 @@ const changeBallPos = () => {
   // if (ballPosX - radius < 0 || ballPosX > canvasWidth) {
   //   ballSpeedX = -ballSpeedX;
   // }
+
   //bounce of top and bottom walls
+
   if (ballPosY - radius < 0 || ballPosY > canvasHeight) {
     ballSpeedY = -ballSpeedY;
   }
 
   // collision with paddles
+
   if (
     ballPosX - radius < paddlePosXR + 10 &&
     ballPosX + radius > paddlePosXR &&
@@ -161,15 +206,3 @@ startButton.addEventListener("click", () => {
     renderImage();
   }, interval);
 });
-
-// confetti 
-
-// Pass in the id of an element
-let confetti = new Confetti('.new_game');
-
-// Edit given parameters
-confetti.setCount(75);
-confetti.setSize(1);
-confetti.setPower(25);
-confetti.setFade(false);
-confetti.destroyTarget(true);

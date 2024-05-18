@@ -23,7 +23,12 @@ body {
   align-items: center;
 }
 
+.game-wrapper {
+  width: 100%;
+}
+
 .title {
+  text-align: center;
   margin-top: 1%;
   margin-bottom: 2%;
 }
@@ -120,4 +125,65 @@ body {
   width: 900px;
   border: 2px solid white;
   background-color: #0661b2
+}
+
+.turn-message {
+  display: none;
+}
+
+/* media */
+
+@media screen and (max-width: 1085px) {
+
+  .canvas-wrapper {
+    width: 80%
+  }
+
+  .canvas {
+    width: 80%;
+    height: auto;
+  }
+
+  .score {
+    margin-bottom: -7%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .score {
+    margin-bottom: -6%;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 619px) {
+
+  .canvas-wrapper {
+    width: 90%;
+  }
+
+  .btn-wrapper {
+    margin-bottom: 6%;
+  }
+
+  .score {
+    margin-bottom: -6%;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .turn-message {
+    display: flex;
+  }
+
+  .turn-title {
+    width: 80%;
+    text-align: center;
+  }
+
+  .game-wrapper {
+    display: none;
+  }
 }

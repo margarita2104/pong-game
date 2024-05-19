@@ -24,6 +24,7 @@ Welcome to the Ping Pong game! This simple yet engaging game brings back the nos
 2. **Control Your Paddle**: Use the designated keys to move your paddle up and down.
 3. **Score Points**: Hit the ball past your opponent's paddle to score a point.
 
+<img width="1270" alt="Screenshot 2024-05-18 at 14 36 49" src="https://github.com/margarita2104/pong-game/assets/107617699/47675436-0759-41d2-987d-240871ac9780">
 
 ## Credits
 
